@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/sdk/javafx-sdk-19-arm64-apple/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://$PROJECT_DIR$/sdk/javafx-sdk-19-arm64-apple/lib" />
+    </NATIVE>
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/sdk/javafx-sdk-19-arm64-apple/lib" recursive="false" />
+  </library>
+</component>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.fxmlController">
+  <tabs>
+    <Tab text="BakedGood(s)">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Text layoutX="225.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the BakedGood Tab." />
+                  <Button fx:id="DeleteBakedGoodButton" layoutX="42.0" layoutY="25.0" mnemonicParsing="false" onAction="#deleteBakedGood" text="Delete" />
+                  <Button fx:id="resetBakedGoodsButton" layoutX="511.0" layoutY="26.0" mnemonicParsing="false" onAction="#resetBakedGoods" text="Reset" />
+                  <Button fx:id="addBakedGoodButton" layoutX="277.0" layoutY="309.0" mnemonicParsing="false" onAction="#addBakedGood" text="Add" />
+                  <TextField fx:id="BakedGoodNameTextField" layoutX="31.0" layoutY="273.0" prefHeight="26.0" prefWidth="133.0" />
+                  <TextField fx:id="BakedGoodCountryOfOriginTextField" layoutX="175.0" layoutY="273.0" prefHeight="26.0" prefWidth="125.0" />
+                  <TextField fx:id="BakedGoodDescriptionTextField" layoutX="312.0" layoutY="273.0" prefHeight="26.0" prefWidth="125.0" />
+                  <TextField fx:id="BakedGoodImageURLTextField" layoutX="449.0" layoutY="273.0" prefHeight="26.0" prefWidth="125.0" />
+                  <Text layoutX="85.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                  <Text layoutX="190.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Country Of Origin" />
+                  <Text layoutX="344.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+                  <Text layoutX="481.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image URL" />
+                  <TableView fx:id="BakedGoodTableView" layoutX="40.0" layoutY="52.0" onMouseClicked="#selectBakedGoodImage" onSort="#populateBakedGoodTableView" prefHeight="184.0" prefWidth="395.0">
+                    <columns>
+                      <TableColumn fx:id="bakedGoodNameColumn" prefWidth="75.0" text="BG Name" />
+                      <TableColumn fx:id="BakedGoodCountryOfOriginColumn" prefWidth="122.0" text="Country Of Origin" />
+                        <TableColumn fx:id="BakedGoodDescriptionColumn" prefWidth="97.0" text="BG Description" />
+                        <TableColumn fx:id="BakedGoodImageColumn" prefWidth="100.0" text="Image" />
+                    </columns>
+                  </TableView>
+                  <ImageView fx:id="BakedGoodImageView" fitHeight="133.0" fitWidth="135.0" layoutX="445.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="BakedIngredients(s)">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Text layoutX="195.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the BakedIngredients Tab." />
+                  <Button fx:id="DeleteBakedIngredientsButton" layoutX="42.0" layoutY="25.0" mnemonicParsing="false" onAction="#deleteBakedIngredients" text="Delete" />
+                  <Button fx:id="resetBakedIngredientsButton" layoutX="511.0" layoutY="26.0" mnemonicParsing="false" onAction="#resetBakedIngredients" text="Reset" />
+                  <Button fx:id="addBakedIngredientsButton" layoutX="277.0" layoutY="309.0" mnemonicParsing="false" onAction="#addBakedIngredients" text="Add" />
+                  <TextField fx:id="BakedIngredientsNameTextField" layoutX="31.0" layoutY="273.0" prefHeight="26.0" prefWidth="133.0" />
+                  <TextField fx:id="BakedIngredientsDescriptionTextField" layoutX="175.0" layoutY="273.0" prefHeight="26.0" prefWidth="125.0" />
+                  <TextField fx:id="BakedIngredientsCaloriesTextField" layoutX="312.0" layoutY="273.0" prefHeight="26.0" prefWidth="125.0" />
+                  <TextField fx:id="BakedIngredientsQuantityTextField" layoutX="449.0" layoutY="273.0" prefHeight="26.0" prefWidth="125.0" />
+                  <Text layoutX="85.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                  <Text layoutX="206.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+                  <Text layoutX="352.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calories" />
+                  <Text layoutX="488.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" />
+                  <TableView fx:id="BakedIngredientsTableView" layoutX="100.0" layoutY="52.0" onSort="#populateBakedIngredientsTableView" prefHeight="184.0" prefWidth="395.0">
+                     <columns>
+                        <TableColumn fx:id="BakedIngredientsNameColumn" prefWidth="75.0" text="BI Name" />
+                        <TableColumn fx:id="BakedIngredientsDescriptionColumn" prefWidth="122.0" text="BI Description" />
+                        <TableColumn fx:id="BakedIngredientsCaloriesColumn" prefWidth="97.0" text="Calories" />
+                        <TableColumn fx:id="BakedIngredientsQuantityColumn" prefWidth="100.0" text="Quantity" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+    </Tab>
+      <Tab text="Recipe(s)">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Text layoutX="225.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the Recipe Tab." />
+                  <TreeTableView fx:id="RecipeTreeTableView" layoutX="10.0" layoutY="75.0" onSort="#populateRecipeTreeTableView" prefHeight="201.0" prefWidth="581.0">
+                    <columns>
+                      <TreeTableColumn fx:id="RecipeBakedGoodNameTreeTableColumn" prefWidth="75.0" text="RBG Name" />
+                      <TreeTableColumn fx:id="RecipeBakedGoodCountryOfOriginTreeTableColumn" prefWidth="75.0" text="RBG CountryOfOrigin" />
+                        <TreeTableColumn fx:id="RecipeBakedGoodDescriptionTreeTableColumn" prefWidth="75.0" text="RBG Description" />
+                        <TreeTableColumn fx:id="RecipeBakedGoodImageTreeTableColumn" prefWidth="56.0" text="RBG Image" />
+                        <TreeTableColumn fx:id="RecipeBakedIngredientsNameTreeTableColumn" prefWidth="67.0" text="RBI Name" />
+                        <TreeTableColumn fx:id="RecipeBakedIngredientsDescriptionTreeTableColumn" prefWidth="88.0" text="RBI Description" />
+                        <TreeTableColumn fx:id="RecipeBakedIngredientsCaloriesTreeTableColumn" prefWidth="63.0" text="RBI Calories" />
+                        <TreeTableColumn fx:id="RecipeBakedIngredientsQuantityTreeTableColumn" prefWidth="81.0" text="RBI Quantity" />
+                    </columns>
+                  </TreeTableView>
+                  <Text layoutX="127.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BakedGood" />
+                  <Text layoutX="407.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BakedIngredients" />
+                  <Text layoutX="234.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the Recipe(s) Tab" />
+                  <Button fx:id="RecipeDeleteButton" layoutX="40.0" layoutY="24.0" mnemonicParsing="false" onAction="#deleteRecipe" text="Delete" />
+                  <Button fx:id="resetRecipeButton" layoutX="514.0" layoutY="24.0" mnemonicParsing="false" onAction="#resetRecipes" text="Reset" />
+                  <ChoiceBox fx:id="recipeBakedGoodChoiceBox" layoutX="52.0" layoutY="300.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="recipeBakedIngredientsChoiceBox" layoutX="234.0" layoutY="301.0" prefWidth="150.0" />
+                  <Text layoutX="95.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BakedGood" />
+                  <Text layoutX="264.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BakedIngredients" />
+                  <Button fx:id="recipeAddButton" layoutX="407.0" layoutY="301.0" mnemonicParsing="false" onAction="#addRecipe" text="Add" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="General">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="loadBakeryButton" layoutX="194.0" layoutY="158.0" mnemonicParsing="false" onAction="#loadBakery" text="Load" />
+                  <Text layoutX="130.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This section of the program allows you to save the state of your bakery." />
+                  <Text layoutX="137.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;Load&quot; allows you to load your last save of your bakery state." />
+                  <Text layoutX="164.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;Save&quot; allows you to save the state of your bakery." />
+                  <Text layoutX="172.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="That's it. Now look at the state of your bakery! ;)" />
+                  <Button fx:id="saveBakeryButton" layoutX="342.0" layoutY="158.0" mnemonicParsing="false" onAction="#saveBakery" text="Save" />
+                  <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="417.0" layoutY="164.0">
+                     <image>
+                        <Image url="@../images/baker_pusheen.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView blendMode="DARKEN" fitHeight="200.0" fitWidth="200.0" layoutX="7.0" layoutY="164.0">
+                     <image>
+                        <Image url="@../images/cookie.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView blendMode="DARKEN" fitHeight="176.0" fitWidth="197.0" layoutX="205.0" layoutY="195.0">
+                     <image>
+                        <Image url="@../images/bakery.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView blendMode="DARKEN" fitHeight="200.0" fitWidth="200.0" layoutX="393.0" layoutY="1.0">
+                     <image>
+                        <Image url="@../images/baguette.jpeg" />
+                     </image>
+                  </ImageView>
+                  <ImageView blendMode="DARKEN" fitHeight="172.0" fitWidth="179.0" layoutX="7.0" layoutY="3.0">
+                     <image>
+                        <Image url="@../images/cake_slice.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+<!--      <Tab text="Search">-->
+<!--        <content>-->
+<!--          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">-->
+<!--               <children>-->
+<!--                  <TextField fx:id="SearchTextField" layoutX="44.0" layoutY="26.0" />-->
+<!--                  <Button fx:id="SearchButton" layoutX="460.0" layoutY="26.0" mnemonicParsing="false" onAction="#onSearch" text="Search" />-->
+<!--                  <ListView fx:id="SearchListView" layoutX="44.0" layoutY="85.0" prefHeight="200.0" prefWidth="385.0" />-->
+<!--               </children>-->
+<!--            </AnchorPane>-->
+<!--        </content>-->
+<!--      </Tab>-->
+  </tabs>
+</TabPane>
